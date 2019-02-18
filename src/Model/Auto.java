@@ -1,34 +1,37 @@
 package Model;
 
+import java.util.HashMap;
 import java.util.Map;
+
 //JAVA BEANS
 public class Auto {
+    private int id;
     private String brand;
     private String model;
     private double price_basic;
-    private Map<String,Double> equipments;
+    private Map<String, Double> equipments = new HashMap<>();
 
-    public Auto(String brand, String model, double price_basic) {
+    public Auto(int id, String brand, String model, double price_basic) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
         this.price_basic = price_basic;
-    }
 
-    public Auto(String brand, String model, double price_basic, Map<String, Double> equipments) {
-        this.brand = brand;
-        this.model = model;
-        this.price_basic = price_basic;
-        this.equipments = equipments;
     }
 
     @Override
     public String toString() {
         return "Auto{" +
-                "brand='" + brand + '\'' +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", price_basic=" + price_basic +
-                ", equipments=" + equipments +
                 '}';
+    }
+
+    //tylko geterr do id
+    public int getId() {
+        return id;
     }
 
     public String getBrand() {
@@ -58,8 +61,9 @@ public class Auto {
     public Map<String, Double> getEquipments() {
         return equipments;
     }
-// zmiana na selektorze!!!
+
+    // zmiana na selektorze!!!
     public void setEquipments(String key, Double value) {
-        this.equipments.put (key, value);
+        this.equipments.put(key, value);
     }
 }
