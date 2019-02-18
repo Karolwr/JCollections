@@ -7,7 +7,7 @@ public class AutoRun {
         af.addAuto("Audi", "A6^", 300_000);
         af.addAuto("VW", "Passat", 200_000);
         af.addAuto("Opel", "Insignia", 250_000);
-        af.getEqipment(1,"Skora naturalna",10000 );
+        af.getEqipment(1, "Skora naturalna", 10000);
 
         af.getAllAuto();
         //     System.out.println(af.getAutosList());

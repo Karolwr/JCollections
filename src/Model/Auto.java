@@ -16,9 +16,7 @@ public class Auto {
         this.brand = brand;
         this.model = model;
         this.price_basic = price_basic;
-
     }
-
     @Override
     public String toString() {
         return "Auto{" +

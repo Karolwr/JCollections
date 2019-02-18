@@ -22,16 +22,28 @@ public class AutoFactory {
     }
 
     public void getEqipment(int id_selected, String eq_name, double eq_price) {
-        for (int i = 0; i < autos.size(); i++) {
-            if (autos.get(i).getId() == id_selected) {
-                autos.get(i).setEquipments(eq_name, eq_price);
-                System.out.println("Dodano wyposazenie dodatkwe");
-
-            }
+        if (searchByld(id_selected) != null) {
+            System.out.println("Dodano wyposażenie dodatkowe");
+        } else {
+            System.out.println("Nie znaleziono auta o id=" + id_selected);
         }
     }
+
+    public void deleteAutoById(int id_selected) {
+        if (searchByld(id_selected) != null) {
+            autos.remove(searchByld(id_selected));
+        } else {
+            System.out.println("NIe znaleziono o id=" + id_selected);
+        }
+    }
+
+    public Auto searchByld(int id_seleced) {
+        for (Auto auto : autos) {
+            if (auto.getId() == id_seleced) {
+                return auto;
+            }
+        }
+        return null;
+    }
 }
-//  public List<Auto> getAutosList() {
-//        return autos;
-//   }
 
